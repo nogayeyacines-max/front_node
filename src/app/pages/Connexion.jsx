@@ -31,7 +31,7 @@ const Connexion = () => {
           localStorage.setItem("token", result.token);
         }
         toast.success(`Bienvenue ${result.user.prenom} ${result.user.nom} !`);
-        setTimeout(() => navigate('/'), 1500); // attend que le toast s'affiche
+        setTimeout(() => navigate('/'), 1500);
       } else {
         toast.error(result.message || "Identifiants incorrects");
       }
@@ -43,26 +43,26 @@ const Connexion = () => {
   }
 
   return (
-    <div className="w-screen h-screen flex items-center justify-center">
-      <div className="w-full max-w-xl p-5 bg-white">
+    <div className="w-screen h-screen flex items-center justify-center bg-[#1A1A1A]">
+      <div className="w-full max-w-md p-8 bg-[#F2E8DD] rounded-xl">
 
-        <h1 className="text-center font-bold text-xl">Connexion</h1>
+        <h1 className="text-center font-bold text-2xl text-[#1A1A1A] mb-6">Connexion</h1>
 
         <form onSubmit={Laconnexion}>
           <div className="flex flex-col gap-2">
-            <label>Email</label>
+            <label className="text-[#1A1A1A] font-medium">Email</label>
             <input
-              className="border py-1 px-3 border-black"
+              className="px-4 py-2 rounded-lg bg-white border border-[#E3D5C5] text-[#1A1A1A] placeholder-[#8C8378] focus:outline-none focus:border-[#B08D6E]"
               type="email"
               placeholder="exemple@gmail.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-          <div className="flex flex-col gap-2 mt-2">
-            <label>Mot de passe</label>
+          <div className="flex flex-col gap-2 mt-4">
+            <label className="text-[#1A1A1A] font-medium">Mot de passe</label>
             <input
-              className="border py-1 px-3 border-black"
+              className="px-4 py-2 rounded-lg bg-white border border-[#E3D5C5] text-[#1A1A1A] placeholder-[#8C8378] focus:outline-none focus:border-[#B08D6E]"
               type="password"
               placeholder="Mot de passe"
               value={password}
@@ -70,10 +70,17 @@ const Connexion = () => {
             />
           </div>
 
-          <button type="submit" className="w-full bg-black text-white mt-10 py-2 mb-2">
+          <button
+            type="submit"
+            className="w-full bg-[#1A1A1A] text-white mt-8 py-3 rounded-lg font-bold hover:bg-[#B08D6E] transition"
+          >
             Se connecter
           </button>
-          <Link to="/inscription" className="text-red-600 font-bold underline">
+
+          <Link
+            to="/inscription"
+            className="block text-center mt-4 text-[#B08D6E] font-bold underline hover:text-[#1A1A1A]"
+          >
             S'inscrire
           </Link>
         </form>
