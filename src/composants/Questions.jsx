@@ -7,7 +7,7 @@ const Questions = () => {
   const [questions, setQuestions] = useState([]);
   const [loading, setLoading] = useState(true);
   const [erreur, setErreur] = useState(false);
-
+  
   useEffect(() => {
     const fetchQuestions = async () => {
       try {

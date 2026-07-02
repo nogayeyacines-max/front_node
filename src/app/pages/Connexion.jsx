@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify';
+const API_URL = import.meta.env.VITE_URL_FRONT ;
 
 const Connexion = () => {
 
@@ -17,7 +18,7 @@ const Connexion = () => {
     }
 
     try {
-const response = await fetch("http://localhost:3000/api/auth/connexion", {
+const response = await fetch(`${API_URL}/api/auth/connexion`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password })

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify';
+const API_URL = import.meta.env.VITE_URL_FRONT ;
 
 const Inscription = () => {
 
@@ -21,7 +22,7 @@ const Inscription = () => {
     const data = { prenom, nom, email, password };
 
     try {
-      const response = await fetch("http://localhost:3000/api/auth/inscription", {
+      const response = await fetch(`${API_URL}/api/auth/inscription`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data)
