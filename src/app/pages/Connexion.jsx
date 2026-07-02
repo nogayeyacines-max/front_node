@@ -17,7 +17,7 @@ const Connexion = () => {
     }
 
     try {
-      const response = await fetch("https://backen-node-js.onrender.com/api/auth/connexion", {
+const response = await fetch("http://localhost:3000/api/auth/connexion", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password })

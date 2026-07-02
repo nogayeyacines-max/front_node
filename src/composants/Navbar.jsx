@@ -30,6 +30,9 @@ const Navbar = () => {
 
             <div className="flex items-center gap-5">
 
+            <NavLink to="/" className="text-gray-300 hover:text-white text-sm font-medium transition">
+              Accueil
+            </NavLink>
                 <NavLink to="/profil" className='text-[#F2E8DD] font-medium hover:text-[#D9C5B2]'>
                     Profil
                 </NavLink>

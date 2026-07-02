@@ -21,7 +21,7 @@ const Inscription = () => {
     const data = { prenom, nom, email, password };
 
     try {
-      const response = await fetch("https://backen-node-js.onrender.com/api/auth/inscription", {
+      const response = await fetch("http://localhost:3000/api/auth/inscription", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data)
@@ -96,7 +96,6 @@ const Inscription = () => {
 
           <button
             type="submit"
-            id="btn2"
             className="w-full bg-[#1A1A1A] text-white mt-8 py-3 rounded-lg font-bold hover:bg-[#B08D6E] transition"
           >
             S'inscrire
